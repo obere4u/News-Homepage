@@ -16,7 +16,7 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](Tochukwu Nwosa)
+- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
 ## Overview

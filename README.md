@@ -67,9 +67,9 @@ I will continue my learning of responsive webpage and CSS animation
 
 ## Author
 
-- Website - [Add your name here](https://wwww.github.com/obere4u)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/obere4u)
-- Twitter - [@yourusername](https://www.twitter.com/obere4u)
+- Website - [Tochukwu Nwosa](https://wwww.github.com/obere4u)
+- Frontend Mentor - [@obere4u](https://www.frontendmentor.io/profile/obere4u)
+- Twitter - [@obere4u](https://www.twitter.com/obere4u)
 
 ## Acknowledgments
 

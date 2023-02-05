@@ -1,0 +1,502 @@
+/*Resetting the default properties of the webpage */
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+--softOrange_primary: hsl(35, 77%, 62%);
+--softRed_primary: hsl(5, 85%, 63%);
+--offWhite: hsl(36, 100%, 99%);
+--grayishBlue: hsl(233, 8%, 79%);
+--darkGrayishBlue: hsl(236, 13%, 42%);
+--veryDarkBlue: hsl(240, 100%, 5%);
+--fontSize: 1.5rem;
+font-kerning: none;
+font-feature-settings: "kern" 1;
+--fontFamily: 'Inter', Arial, Helvetica, sans-serif;
+--fontWeightLight: 400;
+--fontWeightBold: 700;
+--fontWeightVeryBold: 800;
+}
+
+/* Setting the font family from local*/
+/* Refer to https://web.dev/reduce-webfont-size/#web-font-formats for more information on @font-face style */
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter')
+        url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('woff-variation'),
+        url('./assets/fonts/static/Inter-Bold.ttf') format('woff-variation'),
+        url('./assets/fonts/static/Inter-Italic.tt') format('woff-variation'),
+        url('./assets/fonts/static/Inter-ExtraBold.ttf') format('woff-variation'),;
+    font-style: normal;
+}
+
+i, em, .italic {
+	/* Should be font-style: italic; */
+	font-variation-settings: 'ital' 1;
+}
+
+.slanted {
+	/* Should be font-style: oblique 10deg; */
+	font-variation-settings: 'slnt' 10;
+}
+
+html, body {
+    height: 100; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    --webkit-font-smoothing: antialiased;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+picture img {
+    width: 100%;
+}
+
+
+p, h1 {
+    overflow-wrap: break-word; /*makes the text to wrap and not overflow its content */
+}
+
+/* End of the resetting */
+
+.container {
+    padding: 1rem; /*makes the page to have space between it and edges of the screen */
+    max-width: 100%;
+}
+
+/*Navigation links styling  with Mobile First*/
+
+.nav-page_logo {
+    width: 10%; /* takes 40% of the nav bar width */
+    display: block;
+}
+nav {
+    margin-bottom: 20px;
+    height: 50px;
+    padding: 0.75rem;
+    top: 0;
+    left: 0;
+    
+}
+
+.nav-items_mobile {
+    /* display: none; */
+    list-style: none;
+    padding-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    justify-content: space-between;
+    
+}
+
+.nav-items {
+    display: none;    
+}
+
+
+.nav-items_mobile a {
+    text-decoration: none;
+    color: var(--verDarkBlue);
+    font-size: 1.5rem;
+    animation: mobilePanel 2s ease-in-out;
+}
+
+@keyframes mobilePanel {
+    from {
+        top: -100%;
+        opacity: 0;
+    }
+    to {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+.nav-items_mobile a:hover, .nav-items_mobile a:focus {
+    color: var(--softRed_primary); /* sets the hover color and set the hover on focus */
+}
+
+
+.hamburgerBtn {
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: var(--offWhite);
+    min-height: 90vh;
+    width: 50%;
+    padding: 1.3rem 2.35rem;
+    box-shadow: 2px 2px 0 100vw rgba(0, 0, 0, 0.384);
+    /* display: none; */
+}
+
+.hamburgerBtn > div {
+    
+    padding-top: 0.75rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 3rem;
+    outline: none;
+}
+
+#hamburgerBtnClose {
+    background: transparent;
+    border: none;
+    position: inherit;
+    transition: transform 0.5s;
+}
+
+#hamburgerBtnOpen {
+    background: transparent !important;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+    margin:  2rem;
+    padding: 8px;
+    transition: transform 0.5s;
+}
+
+#hamburgerBtnOpen:focus, #hamburgerBtnOpen:hover, #hamburgerBtnOpen:active,
+#hamburgerBtnClose:focus, #hamburgerBtnClose:hover, #hamburgerBtnClose:active{
+  outline: 1px solid var(--veryDarkBlue);
+  /* transform: transl; */
+  transform: scale(1.1);
+}
+
+/* Body container styling */
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.main-article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 1.5rem 0;
+    margin-bottom: 50px;
+}
+
+.main-article h1 {
+    color: var(--veryDarkBlue);
+    font-size: 3.61rem;
+    font-weight: var(--fontWeightVeryBold);
+    letter-spacing: 0.25rem;
+    line-height: 1;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+}
+
+.main-article p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    padding-top: 0;
+    text-align: justify;
+}
+
+.main-article a {
+    text-decoration: none;
+    background-color: var(--softRed_primary);
+    color: var(--offWhite);
+    padding: 1.3rem 2rem;
+    letter-spacing: 5px;
+    font-weight: var(--fontWeightBold);
+    width: 55%;
+    max-width: 250px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.main-article a:hover, .main-article a:focus, .main-article a:active {
+    background-color: var(--veryDarkBlue);
+}
+
+.side-article {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--veryDarkBlue);
+    padding: 0.75rem;
+}
+
+#bottom-divider {
+    border-bottom: 1px solid var(--grayishBlue);
+}
+
+.side-article h2 {
+    color: var(--softOrange_primary);
+    font-size: 3rem;
+    font-weight: var(--fontWeightBold);
+    margin-bottom: 0.5rem;
+}
+
+.side-article a {
+    text-decoration: none;
+    color: var(--offWhite);
+    font-weight: var(--fontWeightVeryBold);
+    font-size: 1.75rem;
+    
+}
+
+.side-article a:hover, .side-article a:focus {
+    color: var(--softOrange_primary);
+}
+
+.side-article p {
+    font-size: 1.35rem;
+    color: var(--grayishBlue);
+}
+
+.footer-article_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-bottom: 50px;
+}
+
+/* this makes the image and its article to be side by side */
+.footer-article_wrap {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    max-width: 100%;
+    max-height: 100%;
+    
+   
+}
+
+#footer-article_img {
+    height: 200px;
+    margin: 0;
+}
+
+
+#footer-article_side-number {
+    color: var(--grayishBlue);
+    font-size: 2rem;
+    max-width: 100px;
+    margin-top: 0;
+    padding-top: 0;
+    top: 0;
+    font-weight: var(--fontWeightBold);
+    letter-spacing: 5px;
+    
+}
+
+.footer-main-article a {
+    text-decoration: none;
+}
+
+.footer-main-article h2 {
+    color: var(--veryDarkBlue);
+    font-size: 0.75rem;
+    font-weight: var(--fontWeightVeryBold);
+    margin: 0;
+    margin-bottom: 1rem;  
+    top: 0;   
+    max-width: 150px;
+}
+
+.footer-main-article h2:hover, .footer-main-article h2:focus {
+    color: var(--softRed_primary);
+}
+
+
+
+.footer-main-article p {
+    color: var(--grayishBlue);
+    font-size: 0.75rem;
+    /* max-height: 80px; */
+    margin: 0;
+    top: 0;
+    max-width: 200px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--grayishBlue);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--veryDarkBlue);
+}
+
+footer a:hover, footer a:focus {
+    color: var(--softRed_primary);
+}
+
+
+/* Responsiveness for large screen devices */
+@media (min-width: 700px) {
+    /* breaks for wider screens */
+    picture img{
+        max-width: 1000px;
+    }
+
+    .container {
+        font-family: var(--fontFamily);
+        padding: 40px;
+         max-width: 1500px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .nav-items {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 90%; /* takes 60% of nav bar width */
+        align-items: center;
+        gap: 1rem;
+        list-style-type: none;
+    }
+
+    .nav-items .active > a  {
+        color: var(--softRed_primary);
+        animation: navItem_hover .5s infinite;
+    }
+
+    .nav-items a {
+        text-decoration: none;
+        color: var(--darkGrayishBlue);
+        font-size: 1.15rem;
+    }
+
+    .nav-items a:hover, .nav-items a:focus {
+        color: var(--softRed_primary);
+        animation: navItem_hover .8s infinite;
+    }
+
+    @keyframes navItem_hover {
+        from {
+            top: 0;
+            left: 0;
+
+        }
+        to {
+            transition: 5ms;
+            border-bottom: 1px solid var(--softRed_primary);
+        }
+    }
+
+    .nav-items_mobile, .hamburgerBtn, #hamburgerBtnOpen {
+        display: none !important;
+    }
+    
+
+    .body-container {
+        flex-direction: row;
+        column-gap: 2rem;
+        max-height: 1050px;
+        max-width: 1500px;
+        margin-bottom: 5rem;
+    }
+
+
+    .side-article {
+        row-gap: 2rem;
+        min-width:35%;
+        line-height: 1.5;
+    }
+
+    .side-article p {
+        line-height: 1.5;
+        letter-spacing: 1.5px;
+    }
+
+    .main-article {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 50px;
+        padding-top: 0;
+    }
+
+    .main-article h1 {
+        font-size: 4.2rem;
+        width: 85%;
+        align-self: flex-start;
+        margin-top: 0;
+        line-height: 1;
+        font-family: var(--fontFamily);
+        font-weight: var(--fontWeightVeryBold);
+        padding-right: 25px;
+    }
+
+    .main-article p {
+        font-size: 1.4rem;
+        font-family: var(--fontFamily);
+        line-height: 1;
+        margin-bottom: 25px;
+    }
+
+    .main-article article {
+        width: 80%;
+        padding-right: 20px;
+    }
+
+    .main-article a {
+        display: block;
+
+    }
+
+    #bottom-divider {
+        padding-bottom: 3rem;
+    }
+
+    .footer-article_container {
+        flex-direction: row;
+    }
+
+    .footer-main-article h2 {
+        font-size: 1.3rem;
+        max-width: 100%;
+        text-align: justify;
+        padding-right: 15px;
+        font-weight: var(--fontWeightVeryBold);
+    }
+    
+    .footer-main-article p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-align: justify;
+        padding-right: 35px;
+        max-width: 295px;
+        font-weight: var(--fontWeightBold);
+    }
+
+
+}

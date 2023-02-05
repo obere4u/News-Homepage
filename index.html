@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="author" content="Tochukwu Nwosa" > <!-- Name of author-->
+  <meta name="description" content="Frontend Mentor Challenge on replication of News homepage"> <!-- Description of page-->
+  <meta name="keywords" content="HTML5, CSS, JavaScript, JS, Frontend, Landing page, Homepage, News, Responsive, mobile view"> <!-- Keywords for SEO-->
+  <link rel="preload" as="font" href="./assets/fonts/Inter-VariableFont_slnt,wght.ttf" type="font/ttf" crossorigin>
+  <link rel="icon" type="image/png" sizes="32 x 32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css"> 
+  <title>Frontend Mentor | News homepage</title>
+
+</head>
+<body>
+  <div class="container">
+
+    <!--
+    || Navigation bar ||
+    ---->
+
+    <nav class="nav">
+      <!----Hamburger menu icon-->
+      <a href="./" aria-label="Click to go back to homepage" class="nav-page_logo"><img src="./assets/images/logo.svg" alt="Page Logo"></a>
+      <button id="hamburgerBtnOpen"><img src="./assets/images/icon-menu.svg" alt="Hamburger open panel"></button>
+      <aside class="hamburgerBtn">
+        <div class="mobile-side-bar">
+          <button id="hamburgerBtnClose"><img src="./assets/images/icon-menu-close.svg" alt="Hamburger close panel"></button>
+        </div>
+        <ul class="nav-items_mobile">
+        <li>
+          <a href="#" class="nave-item_link">Home</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">New</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">Popular</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">Trending</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">Categories</a>
+        </li>
+      </ul>
+      </aside>
+      <ul class="nav-items">
+        <li class="active">
+          <a href="#" class="nave-item_link active">Home</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">New</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">Popular</a>
+        </li>
+        <li>
+          <a href="#" class="nave-item_link">Trending</a>
+        </li>
+        <li>
+          <a href="# class="nave-item_link">Categories</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-------------
+      || MAIN ARTICLE ||
+      ----------------- -->
+
+    <div class="body-container">
+      <main>
+        <div class="wrapper-image" role="presentation" aria-hidden="true">
+          <picture>
+            <source srcset="./assets/images/image-web-3-desktop.jpg" alt="Web 3 desktop image" media="max-width: 699px">
+            <source srcset="./assets/images/image-web-3-mobile.jpg">
+            <img src="./assets/images/image-web-3-mobile.jpg" alt="Web 3 Mobile image" srcset="" media="min-width: 700px">
+          </picture>
+        </div>
+        <section class="main-article">
+          <h1>The Bright Future of Web 3.0?</h1>
+          <article>
+            <p>We dive into the next evolution of the web   that claims to put the power of the platforms back into the hands of the people. 
+            But is it really fulfilling its promise?
+            </p>
+            <a href="#"> Read more</a>
+          </article>
+        </section>
+      </main>
+
+      <!-------------
+      || SIDE ARTICLE ||
+      ----------------- -->
+
+      <aside class="side-article">
+        <h2>New</h2>
+        <div id="bottom-divider">
+          <a href="#">
+            <h3>Hydrogen VS Electric Cars</h3>
+          </a>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </div>
+        <div id="bottom-divider">
+          <a href="#">
+            <h3>The Downsides of AI Artistry</h3>
+          </a>
+          <p>What are the possible adverse effects of on-demand AI</p>    
+        </div>
+        <div>
+          <a href="#">
+            <h3>Is VC Funding Drying Up?</h3>
+          </a>
+          <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>     
+        </div>
+      </aside>
+    </div>
+
+    <!-------------
+      || FOOTER ARTICLE ||
+      ----------------- -->
+
+    <section>
+      <div class="footer-article_container">
+        <div class="footer-article_wrap">
+          <img src="./assets/images/image-retro-pcs.jpg" alt="Top laptops" id="footer-article_img" aria-hidden="true">
+          <div class="footer-article_side" >
+            <p id="footer-article_side-number">01</p>
+            <article class="footer-main-article">
+              <a href="#">
+                <h2>Reviving Retro PCs</h2>
+              </a>
+              <p>What happens when old PCs are given modern upgrades?</p>
+            </article>
+          </div>
+        </div>
+        <div class="footer-article_wrap">
+          <img src="./assets/images/image-top-laptops.jpg" alt="Gaming growth" id="footer-article_img" aria-hidden="true">
+          <div class="footer-article_side" >
+            <p id="footer-article_side-number">02</p>
+            <article class="footer-main-article">
+              <a href="#">
+                <h2>Top 10 Laptops of 2022</h2>
+              </a>
+              <p>Our best picks for various needs and budgets.</p>
+            </article>
+          </div>
+        </div>
+        <d class="footer-article_wrap">
+          <img src="./assets/images/image-gaming-growth.jpg" alt="Retro picture" id="footer-article_img" aria-hidden="true">
+          <div class="footer-article_side" ">
+            <p id="footer-article_side-number">03</p>
+            <article class="footer-main-article">
+              <a href="#">
+                <h2>The Growth of Gaming</h2>
+              </a>
+              <p>How the pandemic has sparked fresh opportunities.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <p>Designed by <a href="https://github.com/obere4u">Nwosa Tochukwu</a> for <a href="frontendmentor.io">Frontend Mentor</a> with love <span>&#128149</span></p>
+    </footer>
+    
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>

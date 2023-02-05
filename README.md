@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://github.com/obere4u/News-Homepage/tree/main
 - Live Site URL: https://newslandingpage.netlify.app/
 
 ## My process
